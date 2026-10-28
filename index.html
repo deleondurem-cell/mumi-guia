@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuMI | Muralla Abierta - Guía</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app-container">
+
+    <!-- Pantalla 1: Onboarding / Presentación -->
+    <section class="screen active" id="screen-1">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <h1 class="title">Museo de la Movilidad y las Identidades</h1>
+        <p class="description">
+          Somos un museo de la Intendencia de Montevideo. Aquí contamos cómo las personas se han desplazado a lo largo del tiempo, y cómo esos movimientos han construido nuestra sociedad, las culturas y las identidades.
+        </p>
+        <p class="subtitle-question">¿Vamos a descubrirlo?</p>
+        <p class="caption-distance">Estás a cinco cuadras</p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-1.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar presentación</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(2)">Continuar</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 2: Inicio / Mapa -->
+    <section class="screen" id="screen-2">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <h2 class="title">¡Hola!<br>Estás en la Puerta de la Ciudadela, ¿Vamos hasta el MuMI?</h2>
+        <div class="visual-card">
+          <img src="img/mapa.png" alt="Mapa del recorrido hacia el museo" class="visual-img">
+        </div>
+        <p class="description">
+          Este recorrido te guía desde la Puerta de la Ciudadela hasta el museo. Podés seguir la línea en el suelo con tus pasos o seguir escuchando este audio.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-2.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar indicaciones</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(3)">Comenzar recorrido</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 3: Paso 1 de 2 (Línea recta) -->
+    <section class="screen" id="screen-3">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <span class="step-badge">Paso 1 de 2</span>
+        <div class="visual-card">
+          <img src="img/flecha.png" alt="Flecha indicando avanzar en línea recta" class="visual-img icon-small">
+        </div>
+        <h2 class="title">Avanzá en línea recta</h2>
+        <p class="description">
+          Caminá despacio pisando la línea en el suelo o camina muy cerca de la pared.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-3.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar instrucción</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(4)">Siguiente paso</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 4: Paso 2 de 2 (Precaución / Advertencia) -->
+    <section class="screen" id="screen-4">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <div class="visual-card">
+          <img src="img/advertencia.png" alt="Símbolo de precaución" class="visual-img icon-small">
+        </div>
+        <h2 class="title">Precaución</h2>
+        <p class="description">
+          Atención: hay una mesa a tu izquierda. El camino se vuelve más angosto. Avanzá con cuidado.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-4.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar advertencia</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(5)">Entendido, continuar</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 5: Paso 2 de 2 (Llegada a esquina / Entrada) -->
+    <section class="screen" id="screen-5">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <span class="step-badge">Paso 2 de 2</span>
+        <div class="visual-card">
+          <img src="img/bifurcacion.png" alt="Símbolo de bifurcación de entrada" class="visual-img icon-small">
+        </div>
+        <h2 class="title">Entrada</h2>
+        <p class="description">
+          Llegaste a Bartolomé Mitre y Piedras. Frente a vos está la entrada principal con un escalón y una puerta de dos hojas. A tu izquierda está la entrada a la Muralla Abierta.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-5.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar cómo llegar</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(6)">Llegué al museo</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 6: Final -->
+    <section class="screen" id="screen-6">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <div class="visual-card">
+<img src="img/checkmark.png" alt="Ícono de confirmación de llegada" class="visual-img icon-small">        </div>
+        <h2 class="title">¡Llegaste al MuMI!</h2>
+        <p class="description">
+          Al entrar, vas a encontrar el mostrador a tu derecha. Podés acercarte si necesitás ayuda o información.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-6.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar información</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(1)">Finalizar recorrido</button>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
