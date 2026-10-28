@@ -1,26 +1,29 @@
 /* Declaración de la fuente OpenRunde local */
 @font-face {
   font-family: 'OpenRunde';
-  src: url('fonts/OpenRunde-Regular-BF64ee9c627e5b6.otf') format('opentype');
+  src: url('fonts/OpenRunde-Regular-BF64ee9c627e5b6.otf') format('opentype'),
+       url('fonts/OpenRunde-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OpenRunde';
-  src: url('fonts/OpenRunde-Medium-BF64ee9c62ad3ad.otf') format('opentype');
+  src: url('fonts/OpenRunde-Medium-BF64ee9c62ad3ad.otf') format('opentype'),
+       url('fonts/OpenRunde-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'OpenRunde';
-  src: url('fonts/OpenRunde-Bold-BF64ee9c62a2035.otf') format('opentype');
+  src: url('fonts/OpenRunde-Bold-BF64ee9c62a2035.otf') format('opentype'),
+       url('fonts/OpenRunde-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
-/* Reseteo y caja base */
+/* Reseteo y normalización */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,23 +32,34 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #1a1a1a;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  align-items: stretch;
+  overflow: hidden;
 }
 
-/* Contenedor móvil centrado */
+/* Contenedor móvil con altura dinámica real (descuenta barras de navegador móvil) */
 .app-container {
   width: 100%;
   max-width: 420px;
   background-color: #ffffff;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 /* Cabecera institucional */
@@ -54,22 +68,25 @@ body {
   background-color: #140505;
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 10px 18px;
+  flex-shrink: 0;
 }
 
 .header-banner {
   width: 100%;
-  max-height: 48px;
+  max-height: 42px;
   object-fit: contain;
   object-position: left center;
   display: block;
 }
 
-/* Control de vistas */
+/* Vistas y pantallas */
 .screen {
   display: none;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1 1 auto;
+  height: calc(100% - 62px);
+  overflow: hidden;
 }
 
 .screen.active {
@@ -77,94 +94,104 @@ body {
 }
 
 .screen-body {
-  padding: 24px 20px 16px 20px;
+  padding: 14px 18px 8px 18px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
-/* Tipografías y textos */
+/* Tipografía de títulos y descripciones */
 .step-badge {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: #111111;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   display: block;
+  flex-shrink: 0;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
   color: #111111;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .description {
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.35;
   color: #222222;
+  flex-shrink: 0;
 }
 
 .subtitle-question {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #111111;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
 }
 
 .caption-distance {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: #555555;
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 8px;
+  flex-shrink: 0;
 }
 
-/* Áreas de pictogramas / mapa */
+/* Áreas de imágenes / pictogramas adaptables */
 .visual-card {
   width: 100%;
-  min-height: 190px;
+  flex: 1 1 auto;
+  min-height: 90px;
+  max-height: 165px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .visual-img {
   max-width: 100%;
-  max-height: 190px;
+  max-height: 100%;
   object-fit: contain;
   display: block;
 }
 
 .visual-img.icon-small {
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 110px;
+  max-height: 110px;
 }
 
-/* Acciones inferiores */
+/* Grupo de botones fijos al pie */
 .footer-actions {
-  padding: 0 20px 24px 20px;
+  padding: 0 18px 14px 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   margin-top: auto;
+  flex-shrink: 0;
 }
 
 .btn {
   width: 100%;
-  padding: 15px 16px;
+  padding: 12px 14px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   transition: transform 0.08s ease, background-color 0.2s ease;
   user-select: none;
 }
@@ -186,8 +213,8 @@ body {
 }
 
 .speaker-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
