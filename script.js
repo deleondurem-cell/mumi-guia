@@ -23,8 +23,8 @@ function toggleAudio(audioPath, buttonElement) {
   buttonElement.classList.add('playing');
 
   currentAudio.play().catch(error => {
-    console.error('Error al reproducir audio:', error);
-    alert('No se pudo encontrar el archivo: ' + audioPath);
+    console.warn('Audio no disponible aún en la ruta:', audioPath);
+    // Vuelve al texto normal de inmediato sin lanzar alertas invasivas en pantalla
     resetAudioButton(buttonElement);
   });
 
