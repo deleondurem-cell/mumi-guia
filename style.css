@@ -23,7 +23,7 @@
   font-style: normal;
 }
 
-/* Reseteo y normalización */
+/* Base accesible */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,26 +35,23 @@
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: #121212;
 }
 
 body {
-  background-color: #1a1a1a;
   display: flex;
   justify-content: center;
   align-items: stretch;
-  overflow: hidden;
 }
 
-/* Contenedor móvil con altura dinámica real (descuenta barras de navegador móvil) */
+/* Contenedor móvil con altura dinámica real */
 .app-container {
   width: 100%;
   max-width: 420px;
   background-color: #ffffff;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
   min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -66,10 +63,10 @@ body {
 .header {
   width: 100%;
   background-color: #140505;
-  display: flex;
-  align-items: center;
   padding: 10px 18px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .header-banner {
@@ -80,7 +77,7 @@ body {
   display: block;
 }
 
-/* Vistas y pantallas */
+/* Pantallas */
 .screen {
   display: none;
   flex-direction: column;
@@ -94,42 +91,42 @@ body {
 }
 
 .screen-body {
-  padding: 14px 18px 8px 18px;
+  padding: 16px 20px 8px 20px;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
 }
 
-/* Tipografía de títulos y descripciones */
+/* Tipografía legible */
 .step-badge {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: #111111;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
   flex-shrink: 0;
 }
 
 .title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.22;
   color: #111111;
   margin-bottom: 10px;
   flex-shrink: 0;
 }
 
 .description {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.35;
-  color: #222222;
+  line-height: 1.4;
+  color: #1a1a1a;
   flex-shrink: 0;
 }
 
 .subtitle-question {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #111111;
   margin-top: 12px;
@@ -138,7 +135,7 @@ body {
 }
 
 .caption-distance {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: #555555;
   margin-top: auto;
@@ -146,16 +143,16 @@ body {
   flex-shrink: 0;
 }
 
-/* Áreas de imágenes / pictogramas adaptables */
+/* Contenedor visual dinámico */
 .visual-card {
   width: 100%;
   flex: 1 1 auto;
-  min-height: 90px;
-  max-height: 165px;
+  min-height: 80px;
+  max-height: 155px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 4px 0 10px 0;
   overflow: hidden;
 }
 
@@ -171,27 +168,28 @@ body {
   max-height: 110px;
 }
 
-/* Grupo de botones fijos al pie */
+/* Botones accesibles: Altura táctil >= 52px */
 .footer-actions {
-  padding: 0 18px 14px 18px;
+  padding: 8px 20px 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-top: auto;
   flex-shrink: 0;
 }
 
 .btn {
   width: 100%;
-  padding: 12px 14px;
+  min-height: 52px;
+  padding: 13px 18px;
   border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transition: transform 0.08s ease, background-color 0.2s ease;
   user-select: none;
 }
@@ -200,21 +198,21 @@ body {
   transform: scale(0.98);
 }
 
-/* Botón de Audio */
+/* Botón de Audio accesible */
 .btn-audio {
   background-color: #ffffff;
   color: #111111;
-  border: 1.5px solid #111111;
+  border: 2px solid #111111;
 }
 
 .btn-audio.playing {
-  background-color: #e5e7eb;
+  background-color: #f3f4f6;
   border-color: #4b5563;
 }
 
 .speaker-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
