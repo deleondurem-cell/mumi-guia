@@ -65,14 +65,14 @@
       </footer>
     </section>
 
-    <!-- Pantalla 3: Paso 1 de 2 (Línea recta) -->
+    <!-- Pantalla 3: Paso 1 de 3 (Línea recta) -->
     <section class="screen" id="screen-3">
       <header class="header">
         <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
       </header>
 
       <div class="screen-body">
-        <span class="step-badge">Paso 1 de 2</span>
+        <span class="step-badge">Paso 1 de 3</span>
         <div class="visual-card">
           <img src="img/flecha.png" alt="Flecha indicando avanzar en línea recta" class="visual-img icon-small">
         </div>
@@ -94,7 +94,7 @@
       </footer>
     </section>
 
-    <!-- Pantalla 4: Paso 2 de 2 (Precaución / Advertencia) -->
+    <!-- Pantalla 4: Precaución / Advertencia -->
     <section class="screen" id="screen-4">
       <header class="header">
         <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
@@ -122,14 +122,45 @@
       </footer>
     </section>
 
-    <!-- Pantalla 5: Paso 2 de 2 (Llegada a esquina / Entrada) -->
+    <!-- Pantalla 5: Paso 2 de 3 (Giro en Bartolomé Mitre) -->
     <section class="screen" id="screen-5">
       <header class="header">
         <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
       </header>
 
       <div class="screen-body">
-        <span class="step-badge">Paso 2 de 2</span>
+        <span class="step-badge">Paso 2 de 3</span>
+        <div class="visual-card">
+          <img src="img/giro.png" alt="Flecha indicando giro a la derecha" class="visual-img icon-small">
+        </div>
+        <h2 class="title">Girá a la derecha</h2>
+        <p class="description">
+          Llegaste a la esquina de Sarandí y Bartolomé Mitre.<br>
+          Girá a tu derecha por la misma vereda.<br>
+          Caminá derecho cuatro cuadras.
+        </p>
+      </div>
+
+      <footer class="footer-actions">
+        <button class="btn btn-audio" onclick="toggleAudio('audio/pantalla-giro.mp3', this)">
+          <svg class="speaker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span class="btn-text">Escuchar instrucción</span>
+        </button>
+        <button class="btn btn-primary" onclick="goToScreen(6)">Siguiente paso</button>
+      </footer>
+    </section>
+
+    <!-- Pantalla 6: Paso 3 de 3 (Entrada) -->
+    <section class="screen" id="screen-6">
+      <header class="header">
+        <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
+      </header>
+
+      <div class="screen-body">
+        <span class="step-badge">Paso 3 de 3</span>
         <div class="visual-card">
           <img src="img/bifurcacion.png" alt="Símbolo de bifurcación de entrada" class="visual-img icon-small">
         </div>
@@ -147,19 +178,20 @@
           </svg>
           <span class="btn-text">Escuchar cómo llegar</span>
         </button>
-        <button class="btn btn-primary" onclick="goToScreen(6)">Llegué al museo</button>
+        <button class="btn btn-primary" onclick="goToScreen(7)">Llegué al museo</button>
       </footer>
     </section>
 
-    <!-- Pantalla 6: Final -->
-    <section class="screen" id="screen-6">
+    <!-- Pantalla 7: Final -->
+    <section class="screen" id="screen-7">
       <header class="header">
         <img src="img/cabecera.png" alt="MuMI | Muralla Abierta" class="header-banner">
       </header>
 
       <div class="screen-body">
         <div class="visual-card">
-<img src="img/checkmark.png" alt="Ícono de confirmación de llegada" class="visual-img icon-small">        </div>
+          <img src="img/checkmark.png" alt="Ícono de confirmación de llegada" class="visual-img icon-small">
+        </div>
         <h2 class="title">¡Llegaste al MuMI!</h2>
         <p class="description">
           Al entrar, vas a encontrar el mostrador a tu derecha. Podés acercarte si necesitás ayuda o información.
@@ -178,6 +210,11 @@
       </footer>
     </section>
 
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
   </main>
 
   <script src="script.js"></script>
