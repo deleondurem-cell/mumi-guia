@@ -23,8 +23,7 @@ function toggleAudio(audioPath, buttonElement) {
   buttonElement.classList.add('playing');
 
   currentAudio.play().catch(error => {
-    console.warn('Audio no disponible aún en la ruta:', audioPath);
-    // Vuelve al texto normal de inmediato sin lanzar alertas invasivas en pantalla
+    console.warn('Audio no disponible en la ruta:', audioPath);
     resetAudioButton(buttonElement);
   });
 
@@ -65,6 +64,13 @@ function goToScreen(screenNumber) {
   const target = document.getElementById('screen-' + screenNumber);
   if (target) {
     target.classList.add('active');
+
+    // Desplaza el foco al inicio del nuevo paso para lectores de pantalla
+    const titleElement = target.querySelector('.title');
+    if (titleElement) {
+      titleElement.setAttribute('tabindex', '-1');
+      titleElement.focus();
+    }
   }
 
   window.scrollTo(0, 0);
